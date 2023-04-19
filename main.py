@@ -15,7 +15,9 @@ wind = input("Set fron/back wind (back wind is negative value): ")
 
 #Temporary csv import
 ballisticTable = pd.read_csv('BallisticData/Mk6_charge1.csv')
+
 print(ballisticTable.columns)
+print(ballisticTable.columns.size)
 closestDistL = ballisticTable.loc[ballisticTable['Dystans'] <= distance].tail(1)
 
 closestDistH = ballisticTable.loc[ballisticTable['Dystans'] > distance].head(1)
