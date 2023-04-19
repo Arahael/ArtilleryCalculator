@@ -25,6 +25,8 @@ match tube:
                 ballisticTable = pd.read_csv('BallisticData/Mk6_charge1.csv')
             case "2":
                 ballisticTable = pd.read_csv('BallisticData/Mk6_charge2.csv')
+            case _:
+                print("You didn't choose any proper power!")
     case "M252":
         match charge:
             case "0":
@@ -33,6 +35,8 @@ match tube:
                 ballisticTable = pd.read_csv('BallisticData/M252_charge1.csv')
             case "2":
                 ballisticTable = pd.read_csv('BallisticData/M252_charge2.csv')
+            case _:
+                print("You didn't choose any proper power!")
     case _:
         print("You didn't choose anything!")
 
