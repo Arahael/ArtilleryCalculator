@@ -1,4 +1,4 @@
-Dystans,Elewacja,D elew/100m,D CzL/100,CzL,Azymut Xwiatr 1m/s,Czolowy,Tylni,Spad.,Wzros.,Spad.,Wzros.
+Dystans,Elewacja,D elew/100m,D CzL/100,CzL,Azymut Xwiatr 1m/s,Czolowy,Tylni,TempSpad.,TempWzros.,AirSpad.,AirWzros.
 150.00,1556.00,1.00,0.80,27.20,16.30,2.50,-2.40,0.00,0.00,-0.20,0.20
 200.00,1541.00,1.00,0.80,27.20,12.30,2.50,-2.40,0.00,0.00,-0.30,0.20
 250.00,1527.00,2.00,0.80,27.20,9.90,2.60,-2.40,0.00,0.00,-0.30,0.30
