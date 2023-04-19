@@ -23,6 +23,10 @@ closestDistRowL = ballisticTable.loc[ballisticTable['Dystans'] <= distance].tail
 closestDistRowH = ballisticTable.loc[ballisticTable['Dystans'] > distance].head(1)
 
 #Read of the csv
+closestDistL = closestDistRowL['Dystans'].values
+#print(closestDistL)
+closestDistH = closestDistRowH['Dystans'].values
+#print(closestDistH)
 closestElevL = closestDistRowL['Elewacja'].values
 closestElevH = closestDistRowH['Elewacja'].values
 closestDElev100L = closestDistRowL['D elew/100m'].values
@@ -39,6 +43,7 @@ frontWindL = closestDistRowL['Czolowy'].values
 frontWindH = closestDistRowH['Czolowy'].values
 backWindL = closestDistRowL['Tylni'].values
 backWindH = closestDistRowH['Tylni'].values
+
 tempDecL = closestDistRowL['TempSpad.'].values
 tempDecH = closestDistRowH['TempSpad.'].values
 tempIncL = closestDistRowL['TempWzros.'].values
