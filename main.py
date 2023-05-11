@@ -13,6 +13,7 @@ wind = float(input("Set front/back wind (back wind is negative value): "))
 tube=str(input("Which tube are you using: "))
 charge=str(input("What charge power level are you using: "))
 #Declaring other variables
+codeError=0
 ballisticTable=0
 rFlightTime=0
 rFinalElevation=0
@@ -48,6 +49,8 @@ def calculations(ballisticTable, distance):
     # Check if distance is out of range or not present in ballisticTable
     if distance < ballisticTable['Dystans'].min() or distance > ballisticTable['Dystans'].max() or distance not in ballisticTable['Dystans'].values:
         print("Distance is out of range or not present in the ballistic table for this charge")
+        global codeError
+        codeError=1
         return None
     else:
         # Find proper rows in ballistic chart
@@ -141,8 +144,9 @@ def calculations(ballisticTable, distance):
     return rFlightTime, rFinalElevation, rFinalWindage
 
 results= calculations(ballisticTable, distance)
-#Display final info
-print("---------------------------------")
-print("Flight time: "+str(results[0])+"\n")
-print("Final elevation: "+str(results[1])+"\n")
-print("Final windage: "+str(results[2])+"\n")
+if codeError==0:
+    #Display final info
+    print("---------------------------------")
+    print("Flight time: "+str(results[0])+"\n")
+    print("Final elevation: "+str(results[1])+"\n")
+    print("Final windage: "+str(results[2])+"\n")
