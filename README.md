@@ -5,5 +5,5 @@
   ### Roadmap
 - [ ] Include all ballistic charts from basic list.  
 - [ ] Create graphical interface.  
-- [ ] Change how charges are chosen (input distance gives results for all eligible charges instead of user choosing charge).
+- [ ] Finalize charges handling (input distance gives results for all eligible charges or user chooses charge and checks).
 - [ ] Final optimalization and cleaning.
