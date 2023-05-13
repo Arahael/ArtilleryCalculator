@@ -1,0 +1,135 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+
+
+
+<MainWindow>:
+    name: "main"
+
+    pressure: pressurekv
+    temperature: temperaturekv
+    distance: distancekv
+    ownElevation: ownelevkv
+    targetElevation: targetelevkv
+    sideWind: sidewindkv
+    wind: windkv
+
+    GridLayout:
+        size: 360, 640
+        cols: 1
+        color: 0.5, 0.5, 0.5, 1
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Pressure: "
+                color:
+
+            TextInput:
+                id: pressurekv
+                multiline: False
+                hint_text: "Input pressure"
+
+            Label:
+                text: "Temperature: "
+                color:
+
+            TextInput:
+                id: temperaturekv
+                multiline: False
+                hint_text: "Input temperature"
+
+            Label:
+                text: "Distance: "
+                color:
+
+            TextInput:
+                id: distancekv
+                multiline: False
+                hint_text: "Input distance to target"
+
+            Label:
+                text: "Your elevation: "
+                color:
+
+            TextInput:
+                id: ownelevkv
+                multiline: False
+                hint_text: "Input your elevation"
+
+            Label:
+                text: "Targets elevation: "
+                color:
+
+            TextInput:
+                id: targetelevkv
+                multiline: False
+                hint_text: "Input targets elevation"
+
+            Label:
+                text: "Side wind: "
+                color:
+
+            TextInput:
+                id: sidewindkv
+                multiline: False
+                hint_text: "Input side wind speed"
+
+            Label:
+                text: "Wind speed"
+                color:
+
+            TextInput:
+                id: windkv
+                multiline: False
+                hint_text: "Input wind speed. Negative for back wind."
+
+
+            Button:
+                text:"Calculate"
+                on_press:
+                    root.calculate()
+                on_release:
+                    app.root.current = "results"
+                    root.manager.transition.direction = "left"
+
+
+
+<SecondWindow>:
+    name: "results"
+
+    rFlightTime:rFlightTime
+    rFinalElevation:rFinalElevation
+    rFinalWindage:rFinalWindage
+
+    GridLayout:
+        size: 360, 640
+        cols: 1
+
+        Label:
+            text: "Your parameters:"
+            color:
+
+        Label:
+            text: "Charge 0"
+            color:
+
+        Label:
+            text: "Flight time: {+rFlightTime}"
+            color:
+
+        Label:
+            text: "Elevation: {+rFinalElevation}"
+            color:
+
+        Label:
+            text: "Windage: {+rFinalWindage}"
+            color:
+
+        Button:
+                text:"Return"
+                on_release:
+                    app.root.current = "main"
+                    root.manager.transition.direction = "right"
